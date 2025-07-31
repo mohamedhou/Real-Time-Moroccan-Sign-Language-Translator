@@ -1,5 +1,4 @@
 # Real-Time-Moroccan-Sign-Language-Translator
-# Real-Time-Moroccan-Sign-Language-Translator
 <!-- ############################################################### -->
 <!-- #               README.md dyal projet professional            # -->
 <!-- # Copier-coller hadchi kaml f fichier README.md dyalk          # -->
