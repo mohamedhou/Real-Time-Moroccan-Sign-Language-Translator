@@ -1,0 +1,10 @@
+# Ignorer les données
+data/
+models/
+
+# Ignorer les fichiers de l'environnement python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+sign_language_env/
