@@ -1,0 +1,346 @@
+/* ==================== VARIABLES CSS ==================== */
+:root {
+    --primary-color: #52f89a;
+    --secondary-color: #C41E3A;
+    --accent-color: #FFD700;
+    --background-gradient: linear-gradient(135deg, #66e1ea 0%, #5cecd9 100%);
+    --text-dark: #4cf768;
+    --text-light: #ecf0f1;
+    --success-color: #46ff93;
+    --warning-color: #f39c12;
+    --error-color: #e74c3c;
+    --border-radius: 12px;
+    --shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==================== FOND GLOBAL ==================== */
+.stApp {
+    background: var(--background-gradient);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ==================== TITRE PRINCIPAL ==================== */
+h1 {
+    color: white !important;
+    text-align: center;
+    font-size: 2.5rem !important;
+    font-weight: 700 !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 2rem !important;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ==================== SIDEBAR STYLING ==================== */
+.css-1d391kg {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px);
+    border-radius: var(--border-radius);
+    margin: 1rem;
+    box-shadow: var(--shadow);
+}
+
+.sidebar .sidebar-content {
+    padding: 2rem 1rem;
+}
+
+.css-1d391kg h2 {
+    color: var(--primary-color) !important;
+    border-bottom: 3px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem !important;
+}
+
+/* ==================== TABS STYLING ==================== */
+.stTabs [data-baseweb="tab-list"] {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: var(--border-radius);
+    padding: 0.5rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+}
+
+.stTabs [data-baseweb="tab"] {
+    height: 60px;
+    border-radius: var(--border-radius);
+    color: var(--text-dark);
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: var(--transition);
+    margin: 0 0.5rem;
+}
+
+.stTabs [data-baseweb="tab"]:hover {
+    background-color: rgba(46, 139, 87, 0.1);
+    transform: translateY(-2px);
+}
+
+.stTabs [aria-selected="true"] {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
+    color: white !important;
+    box-shadow: 0 4px 15px rgba(46, 139, 87, 0.4);
+}
+
+/* ==================== CONTENEURS PRINCIPAUX ==================== */
+.main-container {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    margin: 1rem 0;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(10px);
+}
+
+/* ==================== CONTENEUR DE RÉSULTATS ==================== */
+.result-container {
+    background: linear-gradient(135deg, rgba(46, 139, 87, 0.1), rgba(196, 30, 58, 0.1));
+    border: 2px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    text-align: center;
+    margin: 1.5rem 0;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.result-container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+    transform: rotate(45deg);
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) rotate(45deg); }
+}
+
+.result-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(46, 139, 87, 0.2);
+}
+
+.result-container .label {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.result-container .prediction {
+    font-size: 3rem;
+    font-weight: 800;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 1rem 0;
+    position: relative;
+    z-index: 1;
+}
+
+/* ==================== MÉTRIQUES ==================== */
+[data-testid="metric-container"] {
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid var(--accent-color);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+[data-testid="metric-container"]:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
+}
+
+[data-testid="metric-container"] > div:first-child {
+    color: var(--text-dark) !important;
+    font-weight: 600 !important;
+    font-size: 1.1rem !important;
+}
+
+[data-testid="metric-container"] > div:last-child {
+    color: var(--primary-color) !important;
+    font-weight: 800 !important;
+    font-size: 2rem !important;
+}
+
+/* ==================== BOUTONS ==================== */
+.stButton > button {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 0.75rem 2rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.stButton > button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(46, 139, 87, 0.4);
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+}
+
+.stButton > button:active {
+    transform: translateY(-1px);
+}
+
+/* ==================== FILE UPLOADER ==================== */
+.stFileUploader {
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px dashed var(--primary-color);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.stFileUploader:hover {
+    background: rgba(46, 139, 87, 0.05);
+    border-color: var(--secondary-color);
+}
+
+/* ==================== VIDEO PLAYER ==================== */
+.stVideo {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    margin: 1rem 0;
+}
+
+/* ==================== ALERTES ET MESSAGES ==================== */
+.stAlert {
+    border-radius: var(--border-radius);
+    border: none;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(10px);
+}
+
+.stSuccess {
+    background: linear-gradient(135deg, rgba(39, 174, 96, 0.1), rgba(39, 174, 96, 0.2));
+    border-left: 5px solid var(--success-color);
+}
+
+.stError {
+    background: linear-gradient(135deg, rgba(231, 76, 60, 0.1), rgba(231, 76, 60, 0.2));
+    border-left: 5px solid var(--error-color);
+}
+
+.stWarning {
+    background: linear-gradient(135deg, rgba(243, 156, 18, 0.1), rgba(243, 156, 18, 0.2));
+    border-left: 5px solid var(--warning-color);
+}
+
+.stInfo {
+    background: linear-gradient(135deg, rgba(46, 139, 87, 0.1), rgba(46, 139, 87, 0.2));
+    border-left: 5px solid var(--primary-color);
+}
+
+/* ==================== SPINNER ==================== */
+.stSpinner {
+    color: var(--primary-color) !important;
+}
+
+/* ==================== COLONNES ==================== */
+.css-1r6slb0 {
+    padding: 0 1rem;
+}
+
+/* ==================== WEBRTC CONTAINER ==================== */
+.stWebRTC {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    margin: 2rem 0;
+}
+
+/* ==================== ANIMATIONS ==================== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease-out;
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem !important;
+    }
+    
+    .result-container .prediction {
+        font-size: 2rem;
+    }
+    
+    .css-1d391kg {
+        margin: 0.5rem;
+    }
+    
+    .main-container {
+        padding: 1rem;
+        margin: 0.5rem 0;
+    }
+}
+
+/* ==================== SCROLLBAR PERSONNALISÉE ==================== */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+}
