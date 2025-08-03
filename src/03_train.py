@@ -249,4 +249,4 @@ if __name__ == "__main__":
             print("\nPlotting training history...")
             plot_history(training_history)
     except Exception as e:
-        print(f"\nAn error occurred during the training script: {e}")
+        print(f"\nAn error occurred during the training script: {e}")   
