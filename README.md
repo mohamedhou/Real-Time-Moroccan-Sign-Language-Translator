@@ -64,8 +64,8 @@ Suivez ces étapes pour installer et lancer le projet sur votre machine.
 
 1.  **Cloner le repository GitHub :**
     ```bash
-    git clone https://github.com/votre-username/votre-repo-name.git
-    cd votre-repo-name
+    git clone https://github.com/mohamedhou/Real-Time-Moroccan-Sign-Language-Translator.git
+    cd Real-Time-Moroccan-Sign-Language-Translator
     ```
     <!-- BDEL 'votre-username' w 'votre-repo-name' -->
 
